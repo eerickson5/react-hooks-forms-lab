@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ShoppingList from "./ShoppingList";
 import Header from "./Header";
 import itemData from "../data/items";
+import {ItemsProvider} from "./ItemsProvider";
 
 function App() {
   const [items, setItems] = useState(itemData);
@@ -13,8 +14,10 @@ function App() {
 
   return (
     <div className={"App " + (isDarkMode ? "dark" : "light")}>
-      <Header isDarkMode={isDarkMode} onDarkModeClick={handleDarkModeClick} />
-      <ShoppingList items={items} />
+      <ItemsProvider>
+        <Header isDarkMode={isDarkMode} onDarkModeClick={handleDarkModeClick} />
+        <ShoppingList items={items}/>
+      </ItemsProvider>
     </div>
   );
 }

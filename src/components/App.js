@@ -5,7 +5,6 @@ import itemData from "../data/items";
 import {ItemsProvider} from "./ItemsProvider";
 
 function App() {
-  const [items, setItems] = useState(itemData);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   function handleDarkModeClick() {
@@ -16,7 +15,7 @@ function App() {
     <div className={"App " + (isDarkMode ? "dark" : "light")}>
       <ItemsProvider>
         <Header isDarkMode={isDarkMode} onDarkModeClick={handleDarkModeClick} />
-        <ShoppingList items={items}/>
+        <ShoppingList/>
       </ItemsProvider>
     </div>
   );

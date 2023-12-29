@@ -30,7 +30,7 @@ function ShoppingList() {
 
   const filterBySearch = (item) => {
     if(search === "") return true;
-    return item.name.toLowerCase().includes(search);
+    return item.name.toLowerCase().includes(search.toLowerCase());
   }
 
   const filterByCategory = (item) => {
